@@ -1,3 +1,6 @@
 module.exports = function render(input, out) {
-    out.global.widgetsConfig.disableStateSerialization = input.serializeState === false;
+  if (!out.global.widgetsConfig) {
+    out.global.widgetsConfig = {}
+  }
+  out.global.widgetsConfig.disableStateSerialization = input.serializeState === false;
 };
